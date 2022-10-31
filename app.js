@@ -92,55 +92,142 @@
 
 //=============================================================================================
 
-//Project an array of series into an array of {id, title} pairs using forEach()
-//A projection is a process of applying a function to an existing value to produce a new value.
+    
+            
+    //an array of series into an array of {id, title} pairs using forEach function.
 
-//function() {
-	//let newSeries = [
-			// {
-			// 	"id": 70111470,
-			// 	"title": "Die Hard",
-			// 	"boxart": "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
-			// 	"uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-			// 	"rating": [4.0],
-			// 	"bookmark": []
-			// },
-			// {
-			// 	"id": 654356453,
-			// 	"title": "Bad Boys",
-			// 	"boxart": "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
-			// 	"uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-			// 	"rating": [5.0],
-			// 	"bookmark": [{ id: 432534, time: 65876586 }]
-			// },
-			// {
-			// 	"id": 65432445,
-			// 	"title": "The Chamber",
-			// 	"boxart": "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
-			// 	"uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-			// 	"rating": [4.0],
-			// 	"bookmark": []
-			// },
-			// {
-			// 	"id": 675465,
-			// 	"title": "Fracture",
-			// 	"boxart": "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
-			// 	"uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-			// 	"rating": [5.0],
-			// 	"bookmark": [{ id: 432534, time: 65876586 }]
-			// }
-		    //      ],
-		
-            //      }
-// function() {
-//     let newSeries = [
-//         {
-//             "id": 70111470,
-//             "title": "Die Hard",
-//             "boxart": "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
-//             "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-//             "rating": [4.0],
+    // let newArr = [ {
+    //     "id": 70111470,
+    //     "title": "Die Hard",
+    //     "boxart": "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
+    //     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+    //     "rating": [4.0],
+    //     "bookmark": []
+    // },
+    // {
+    //     "id": 654356453,
+    //     "title": "Bad Boys",
+    //     "boxart": "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
+    //     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+    //     "rating": [5.0],
+    //     "bookmark": [{ id: 432534, time: 65876586 }]
+    // },
+    // {
+    //     "id": 65432445,
+    //     "title": "The Chamber",
+    //     "boxart": "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
+    //     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+    //     "rating": [4.0],
+    //     "bookmark": []
+    // },
+    // {
+    //     "id": 675465,
+    //     "title": "Fracture",
+    //     "boxart": "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
+    //     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+    //     "rating": [5.0],
+    //     "bookmark": [{ id: 432534, time: 65876586 }]
+    // }];
+
+    // function getMovieIdAndTitle(newArr) {
+    //     let movieIdAndTitle = [];
+    //     newArr.forEach((element) => {
+    //         movieIdAndTitle.push({ id: element.id, title: element.title });
+    //     });
+    //     return movieIdAndTitle;
+    // }
+    // console.log(getMovieIdAndTitle(newArr));
+
+    //=============================================================================================
 
 
+    //Use map() now to implement the same previous functionality
+
+// let newArr = [ {
+//         "id": 70111470,
+//         "title": "Die Hard",
+//         "boxart": "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
+//         "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+//         "rating": [4.0],
+//         "bookmark": []
+//     },
+//     {
+//         "id": 654356453,
+//         "title": "Bad Boys",
+//         "boxart": "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
+//         "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+//         "rating": [5.0],
+//         "bookmark": [{ id: 432534, time: 65876586 }]
+//     },
+//     {
+//         "id": 65432445,
+//         "title": "The Chamber",
+//         "boxart": "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
+//         "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+//         "rating": [4.0],
+//         "bookmark": []
+//     },
+//     {
+//         "id": 675465,
+//         "title": "Fracture",
+//         "boxart": "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
+//         "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+//         "rating": [5.0],
+//         "bookmark": [{ id: 432534, time: 65876586 }]
+//     }];
+
+//     function getMovieIdAndTitle(newArr) {
+//         let movieIdAndTitle = newArr.map((element) => {
+//             return { id: element.id, title: element.title };
+//         });
+//         return movieIdAndTitle;
+//     }
+//     console.log(getMovieIdAndTitle(newArr));
+
+//=============================================================================================
+
+//Use filter() to return the series with a rating under 5.0
+// let newArr = [ {
+//         "id": 70111470,
+//         "title": "Die Hard",
+//         "boxart": "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
+//         "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+//         "rating": [4.0],
+//         "bookmark": []
+//     },
+//     {
+//         "id": 654356453,
+//         "title": "Bad Boys",
+//         "boxart": "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
+//         "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+//         "rating": [5.0],
+//         "bookmark": [{ id: 432534, time: 65876586 }]
+//     },
+//     {
+//         "id": 65432445,
+//         "title": "The Chamber",
+//         "boxart": "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
+//         "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+//         "rating": [4.0],
+//         "bookmark": []
+//     },
+//     {
+//         "id": 675465,
+//         "title": "Fracture",
+//         "boxart": "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
+//         "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
+//         "rating": [5.0],
+//         "bookmark": [{ id: 432534, time: 65876586 }]
+//     }];
+
+//     function getMovieIdAndTitle(newArr) {
+//         let movieIdAndTitle = newArr.filter((element) => {
+//             return element.rating < 5.0;
+//         });
+//         return movieIdAndTitle;
+//     }
+//     console.log(getMovieIdAndTitle(newArr));
+
+//=============================================================================================
 
 
